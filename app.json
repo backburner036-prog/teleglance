@@ -1,0 +1,1 @@
+{"edition":"202601","entrypoint":"index.html","min_sdk_version":"0.0.16","name":"TeleGlance","package_id":"com.backburner036.teleglance","permissions":[{"desc":"Fetch Telegram Bot API updates and CoinGecko public spot prices (read-only).","name":"network","whitelist":["https://api.telegram.org","https://api.coingecko.com"]}],"supported_languages":["en","id"],"version":"0.1.0"}
