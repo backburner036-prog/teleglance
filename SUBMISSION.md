@@ -32,7 +32,11 @@
 - [ ] Video demo direkam dari simulator asli, upload YouTube IDR —
       **TERTAHAN** (butuh simulator jalan dulu).
 - [ ] Repo publik `github.com/backburner036-prog/teleglance` diisi (saat ini
-      repo hanya berisi README 1 baris — push source dari folder ini)
+      repo hanya berisi README 1 baris — push source dari folder ini) —
+      **TERBLOKIR**: commit lokal `9c0b545` siap (13 file); `git fetch
+      origin` kena execution-risk check baru (23 Nov 10:13 WIB) —
+      merge + push TIDAK dijalankan, tidak di-bypass. Lanjut bila
+      koordinator/IDR beri go-ahead atas konten fetch itu.
 - [ ] Daftar + submit di halaman DoraHacks (via browser — lane ini tidak
       bisa; serahkan ke koordinator/IDR)
 - [ ] Deskripsi submit (draf): "TeleGlance — Telegram digest + crypto

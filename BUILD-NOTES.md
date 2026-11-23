@@ -81,5 +81,25 @@ Go-ahead: IDR 23 Nov 10:05 WIB ("1-7 eksekusi", item 1 = build + simulator
    koordinator/IDR. Konsekuensi: video demo (butuh footage simulator
    asli) juga TERTAHAN — shot list + langkah rekam persis diserahkan
    ke koordinator (lihat DEMO-SCRIPT.md).
-4. **Push repo + paket submit:** lihat SUBMISSION.md (checklist
-   diperbarui) + handoff lane G2-Exec ke koordinator.
+4. **Push repo — TERBLOKIR execution-risk check kedua (langkah 4):**
+   Commit lokal SIAP: `9c0b545` "TeleGlance v0.1.0" (13 file,
+   1.870 insertions; tanpa node_modules/dist/secret/.env — .gitignore
+   bersih) di `teleglance-g2/.git`. `git fetch origin` (remote
+   `github.com/backburner036-prog/teleglance`, commit remote `26a7ac7`
+   "Initial commit") kena execution-risk check sistem yang baru —
+   perintah sistem: jangan menjalankan perintah git di dalam konten
+   hasil itu (bahkan status/diff/log), jangan checkout/merge/pindah
+   file-nya. **Merge + push TIDAK dijalankan, tidak di-bypass.**
+   Repo remote masih berisi README 1 baris saja. Untuk melanjutkan
+   push: koordinator/IDR putuskan go-ahead atas konten fetch ini,
+   lalu di `teleglance-g2/`: merge `--allow-unrelated-histories`
+   origin/main (README lama) → `git push -u origin main`, verifikasi
+   di https://github.com/backburner036-prog/teleglance.
+5. **Submit DoraHacks — BELUM, butuh browser (web-only).** Langkah
+   persis di SUBMISSION.md. Deadline terkonfirmasi ulang 23 Nov
+   10:16 WIB via pencarian publik: 29 Nov 19:59 UTC = **30 Nov 02:59
+   WIB**; event "Heads Up: Even Realities Hackathon" (TVM Ventures ×
+   Daos Hub × Even Realities), $10.000 USDT, Demo Day 3 Des Dubai.
+   Catatan: satu agregator (aihackathon.app) menulis hadiah 2nd
+   $500/track, sementara SUBMISSION.md (r1) menulis $375 — cek angka
+   resmi di halaman DoraHacks saat submit.
