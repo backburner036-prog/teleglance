@@ -1,10 +1,13 @@
 # TeleGlance — Paket Submit DoraHacks (Even Realities G2)
 
-> Status 23 Nov 2026 ~10:20 WIB: repo SUDAH PUSH ke GitHub (commit
-> `0688b1c`, 23 Nov 10:17 WIB — terverifikasi di halaman repo, 4 commit,
-> publik). Build LOLOS. Simulator test IN PROGRESS (go-ahead IDR 10:14 WIB).
-> Submit DoraHacks BELUM (butuh video dulu). Jangan klaim sudah submit
-> sebelum langkah di bawah benar-benar dieksekusi.
+> Status 23 Nov 2026 ~10:40 WIB: repo SUDAH PUSH ke GitHub (commit
+> `6b22cd1`, 23 Nov 10:39 WIB — terverifikasi via `git ls-remote`, 5 commit,
+> publik). Build LOLOS. **Simulator test LOLOS 23 Nov 10:35 WIB** (sim 0.9.5:
+> 4 layar + tap/double-tap + refresh 60 dtk, 0 error console). **Video demo
+> SELESAI 23 Nov 10:39 WIB** (`video/teleglance-demo.mp4`, 2:32, 576×328,
+> footage simulator asli + subtitle EN; upload YouTube IDR tersisa).
+> Submit DoraHacks BELUM (butuh URL video YouTube dulu). Jangan klaim sudah
+> submit sebelum langkah di bawah benar-benar dieksekusi.
 
 ## Fakta hackathon (terverifikasi lane r1, 23 Nov 2026)
 
@@ -29,16 +32,25 @@
 - [x] Build lolos: `npm run build` + `vite build` — LOLOS 23 Nov 10:09 WIB
       (`tsc` bersih, dist 81,17 kB). `evenhub pack` tidak dijalankan
       (bukan bagian pipeline yang diminta; packer opsional bila diperlukan).
-- [ ] Uji simulator: 4 layar + tap/double-tap + refresh 60 dtk —
-      IN PROGRESS 23 Nov 10:14 WIB (go-ahead IDR atas install simulator
-      0.9.5; paket 0.9.5 sudah ada di /tmp/g2-sim; lib WebKitGTK sistem
-      sedang dipasang via apt — lihat BUILD-NOTES.md).
-- [ ] Video demo direkam dari simulator asli, upload YouTube IDR —
-      **TERTAHAN** (butuh simulator jalan dulu).
+- [x] Uji simulator: 4 layar + tap/double-tap + refresh 60 dtk —
+      **LOLOS 23 Nov 10:35 WIB** (sim 0.9.5, Xvfb :99, automation API :9898;
+      bukti `sim-test/v3-*.png` + `sim-test-results.json`). Temuan + fix:
+      (a) tap simulator tiba sebagai sysEvent bukan textEvent — fix di
+      `src/main.ts` (fallback sysEvent, commit `6b22cd1`); (b) layar Telegram
+      (13 baris) + Help (11 baris) meluber dari 576×288 (muat 10 baris) —
+      footer Telegram dihapus + 1 baris kosong Help dipotong; (c) double-tap
+      menutup app (layar blank) — simulator TIDAK menampilkan dialog sistem;
+      narasi video disesuaikan. Harga crypto LIVE CoinGecko terverifikasi
+      (BTC $61.418–$61.520 bergerak antar shot); refresh 60 dtk terverifikasi
+      (jam "Sinkron" + harga berubah).
+- [x] Video demo direkam dari simulator asli — **SELESAI 23 Nov 10:39 WIB**:
+      `video/teleglance-demo.mp4` (2:32, 576×328, h264, 255 KB; 5 shot
+      sesuai DEMO-SCRIPT.md; subtitle EN dibakar; end card repo + deadline).
+      **Sisa: upload ke YouTube IDR (Public/Unlisted) — langkah BOT utama.**
+      Cuplikan LIVE Telegram belum ada (butuh token bot dari IDR).
 - [x] Repo publik `github.com/backburner036-prog/teleglance` diisi —
-      PUSHED 23 Nov 10:17 WIB (commit `0688b1c`, merge `9c0b545` +
-      `c3068d7` + README remote `26a7ac7`; terverifikasi di halaman
-      GitHub: current commit 0688b1c, 4 commit, publik).
+      PUSHED 23 Nov 10:39 WIB (commit `6b22cd1`, terverifikasi via
+      `git ls-remote`: `6b22cd14c426808e4c37a39c8aab303c8a14c390`).
 - [ ] Daftar + submit di halaman DoraHacks (via browser — lane ini tidak
       bisa; serahkan ke koordinator/IDR)
 - [ ] Deskripsi submit (draf): "TeleGlance — Telegram digest + crypto

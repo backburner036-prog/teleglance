@@ -6,10 +6,13 @@ simulator — no glasses needed.
 
 - **Track:** Messaging (primary) + Best Telegram Integration ($1,000)
 - **Prize pool:** $10,000 USDT · **Submit deadline: 30 Nov 2026 02:59 WIB**
-- **Status:** v0.1.0 pushed to GitHub (commit `0688b1c`, 23 Nov 10:17 WIB) —
-  build LOLOS (`tsc && vite build` bersih); simulator test IN PROGRESS
-  (go-ahead IDR 23 Nov 10:14 WIB untuk `git fetch origin` + install
-  simulator 0.9.5; lihat `BUILD-NOTES.md`)
+- **Status:** v0.1.0 pushed to GitHub (commit `6b22cd1`, 23 Nov 10:39 WIB) —
+  build LOLOS (`tsc && vite build` bersih); **simulator test LOLOS**
+  23 Nov 10:35 WIB (sim 0.9.5, 4 layar + tap/double-tap + refresh 60 dtk,
+  0 error console); **video demo SELESAI** 23 Nov 10:39 WIB
+  (`video/teleglance-demo.mp4`, 2:32, footage simulator asli + subtitle;
+  upload YouTube tersisa — langkah BOT utama). Submit DoraHacks BELUM
+  (butuh URL video YouTube dulu). Lihat `BUILD-NOTES.md` + `SUBMISSION.md`.
 
 ## Screens (576×288, one text container)
 
@@ -18,8 +21,10 @@ simulator — no glasses needed.
 3. **Crypto** — BTC / ETH / SOL spot prices (display-only)
 4. **Help** — what each screen does
 
-Tap = next screen. Double-tap = system exit-confirmation dialog
-(mode 1, as required by Even Hub QA).
+Tap = next screen. Double-tap = exit (calls `shutDownPageContainer(1)`,
+mode 1, as required by Even Hub QA). Note: in the simulator the display
+goes blank on exit — no system dialog is rendered there; on real glasses
+mode 1 shows the system exit-confirmation dialog.
 
 ## Data modes — honest by design
 

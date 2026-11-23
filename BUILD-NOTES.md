@@ -103,3 +103,21 @@ Go-ahead: IDR 23 Nov 10:05 WIB ("1-7 eksekusi", item 1 = build + simulator
    Catatan: satu agregator (aihackathon.app) menulis hadiah 2nd
    $500/track, sementara SUBMISSION.md (r1) menulis $375 — cek angka
    resmi di halaman DoraHacks saat submit.
+
+## HASIL EKSEKUSI — G2-Exec-R2, 23 Nov 2026 10:15–10:41 WIB
+
+Go-ahead: IDR 23 Nov 10:14 WIB ("Ya, fetch + install simulator G2").
+
+1. **Push repo — SELESAI:** merge `--allow-unrelated-histories` + push;
+   remote main terverifikasi `6b22cd1` (5 commit, publik).
+2. **Simulator 0.9.5 JALAN + uji LOLOS 10:35 WIB:** 4 layar via tap,
+   double-tap menutup app, refresh 60 dtk (harga BTC LIVE CoinGecko),
+   0 error console. Dua bug diperbaiki (commit `6b22cd1`): tap tiba
+   sebagai sysEvent (fallback di `src/main.ts`); layar Telegram/Help
+   meluber (footer dihapus + baris kosong dipotong). Koreksi: double-tap
+   di simulator langsung mengosongkan layar — TIDAK ada dialog sistem.
+3. **Video demo — SELESAI 10:39 WIB:** `teleglance-demo.mp4` 2:32,
+   576×328, 255 KB, footage simulator asli + subtitle narasi EN + end card.
+4. **Dokumen — commit + push 23 Nov ~10:47 WIB** (go-ahead eksplisit IDR
+   atas konten ter-flag ini): README + SUBMISSION + DEMO-SCRIPT +
+   BUILD-NOTES ini.
