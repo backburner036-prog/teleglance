@@ -1,15 +1,19 @@
 # TeleGlance — Paket Submit DoraHacks (Even Realities G2)
 
-> Status 23 Nov 2026 ~09:55 WIB: paket source SIAP. Submit BELUM dilakukan
-> (butuh build + video dulu — keduanya tertahan execution-risk flag, lihat
-> BUILD-NOTES.md). Jangan klaim sudah submit sebelum langkah di bawah
-> benar-benar dieksekusi.
+> Status 23 Nov 2026 ~10:20 WIB: repo SUDAH PUSH ke GitHub (commit
+> `0688b1c`, 23 Nov 10:17 WIB — terverifikasi di halaman repo, 4 commit,
+> publik). Build LOLOS. Simulator test IN PROGRESS (go-ahead IDR 10:14 WIB).
+> Submit DoraHacks BELUM (butuh video dulu). Jangan klaim sudah submit
+> sebelum langkah di bawah benar-benar dieksekusi.
 
 ## Fakta hackathon (terverifikasi lane r1, 23 Nov 2026)
 
 - Event: Even Realities G2 Hackathon, DoraHacks — $10.000 USDT, 10 pemenang
   (Grand $2.000, 1st/track $1.250, 2nd $375, Best Telegram $1.000,
   Community Partner s.d. $500) + s.d. 10 pasang G2 refurbished.
+  **Diskrepansi SELESAI 23 Nov 10:20 WIB:** angka resmi DoraHacks 2nd/track
+  = **$375** (SUBMISSION.md r1 benar); $500 yang ditulis satu agregator
+  adalah Community Partner Award (s.d. $500), bukan 2nd/track.
 - **Deadline submit: 30 Nov 2026 02:59 WIB** (29 Nov 19:59 UTC).
 - Demo Day 3 Des 2026, Dubai, remote tersedia. Cash USDT ≤7 hari setelah Demo Day.
 - Syarat: repo publik GitHub/GitLab + README, video demo ≤3 mnt (simulator
@@ -26,17 +30,15 @@
       (`tsc` bersih, dist 81,17 kB). `evenhub pack` tidak dijalankan
       (bukan bagian pipeline yang diminta; packer opsional bila diperlukan).
 - [ ] Uji simulator: 4 layar + tap/double-tap + refresh 60 dtk —
-      **TERBLOKIR** execution-risk check baru pada install simulator
-      0.9.5 (23 Nov 10:10 WIB); tidak dijalankan, tidak di-bypass.
-      Go-ahead IDR 10:05 WIB dikutip di laporan lane G2-Exec.
+      IN PROGRESS 23 Nov 10:14 WIB (go-ahead IDR atas install simulator
+      0.9.5; paket 0.9.5 sudah ada di /tmp/g2-sim; lib WebKitGTK sistem
+      sedang dipasang via apt — lihat BUILD-NOTES.md).
 - [ ] Video demo direkam dari simulator asli, upload YouTube IDR —
       **TERTAHAN** (butuh simulator jalan dulu).
-- [ ] Repo publik `github.com/backburner036-prog/teleglance` diisi (saat ini
-      repo hanya berisi README 1 baris — push source dari folder ini) —
-      **TERBLOKIR**: commit lokal `9c0b545` siap (13 file); `git fetch
-      origin` kena execution-risk check baru (23 Nov 10:13 WIB) —
-      merge + push TIDAK dijalankan, tidak di-bypass. Lanjut bila
-      koordinator/IDR beri go-ahead atas konten fetch itu.
+- [x] Repo publik `github.com/backburner036-prog/teleglance` diisi —
+      PUSHED 23 Nov 10:17 WIB (commit `0688b1c`, merge `9c0b545` +
+      `c3068d7` + README remote `26a7ac7`; terverifikasi di halaman
+      GitHub: current commit 0688b1c, 4 commit, publik).
 - [ ] Daftar + submit di halaman DoraHacks (via browser — lane ini tidak
       bisa; serahkan ke koordinator/IDR)
 - [ ] Deskripsi submit (draf): "TeleGlance — Telegram digest + crypto

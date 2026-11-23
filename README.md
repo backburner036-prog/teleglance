@@ -6,9 +6,10 @@ simulator — no glasses needed.
 
 - **Track:** Messaging (primary) + Best Telegram Integration ($1,000)
 - **Prize pool:** $10,000 USDT · **Submit deadline: 30 Nov 2026 02:59 WIB**
-- **Status:** v0.1.0 source ready — build + simulator test PENDING (see
-  `BUILD-NOTES.md`: an execution-risk flag paused all run/install/build
-  steps; they need an explicit go-ahead before anyone runs them)
+- **Status:** v0.1.0 pushed to GitHub (commit `0688b1c`, 23 Nov 10:17 WIB) —
+  build LOLOS (`tsc && vite build` bersih); simulator test IN PROGRESS
+  (go-ahead IDR 23 Nov 10:14 WIB untuk `git fetch origin` + install
+  simulator 0.9.5; lihat `BUILD-NOTES.md`)
 
 ## Screens (576×288, one text container)
 

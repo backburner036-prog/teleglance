@@ -98,7 +98,9 @@ function render(): string {
       const snippet = m.text.length > 44 ? m.text.slice(0, 44) + '…' : m.text
       body += `• ${m.chat} (${m.time})\n  ${snippet}\n`
     }
-    if (!tgLive) body += `\nMode LIVE: buka ?tg=<token-bot>\n(bot @BotFather, gratis)`
+    // Footer LIVE dihapus (23 Nov 2026): layar 576x288 muat 10 baris;
+    // footer 3 baris membuat total 13 baris dan terpotong di simulator.
+    // Cara LIVE dijelaskan di README (buka ?tg=<token-bot>).
     return body
   }
   if (screen === 2) {
@@ -111,7 +113,7 @@ function render(): string {
   }
   return (
     head + sep +
-    `TeleGlance v0.1.0 — Even G2\n\n` +
+    `TeleGlance v0.1.0 — Even G2\n` +
     `1 Glance: ringkasan pesan + harga\n` +
     `2 Telegram: digest pesan terbaru\n` +
     `3 Crypto: BTC/ETH/SOL spot\n` +
@@ -217,8 +219,23 @@ const push = (content: string): void => {
 
 bridge.onEvenHubEvent((event) => {
   const textEvent = event.textEvent
-  if (!textEvent || textEvent.containerID !== 1) return
-  switch (textEvent.eventType) {
+  // Simulator quirk (verified 23 Nov 2026, sim 0.9.5): taps arrive as
+  // sysEvent (eventSource 1 = touchpad, eventType 0 = CLICK / 3 = DOUBLE_CLICK),
+  // NOT as textEvent — both via the automation API and via the simulator's
+  // own Click/Double Click buttons. Real glasses send textEvent for a focused
+  // container; the sysEvent branch below is a fallback so tap also works in
+  // the simulator. Each host event carries exactly one type, so there is no
+  // double-advance: a tap is either textEvent or sysEvent, never both.
+  const sysTap = event.sysEvent
+  if (textEvent && textEvent.containerID === 1) {
+    handleTap(textEvent.eventType)
+  } else if (sysTap && sysTap.eventSource === 1) {
+    handleTap(sysTap.eventType)
+  }
+})
+
+function handleTap(eventType: OsEventTypeList | undefined): void {
+  switch (eventType) {
     case OsEventTypeList.CLICK_EVENT:
     case undefined: // SDK normalizes 0 to undefined in some cases
       screen = (screen + 1) % SCREENS.length
@@ -229,7 +246,7 @@ bridge.onEvenHubEvent((event) => {
       bridge.shutDownPageContainer(1)
       break
   }
-})
+}
 
 // Refresh data every 60 s (best-effort; DEMO labels stay honest on failure).
 void syncAll(push)
